@@ -3,8 +3,23 @@ package org.monicaraje;
 import java.util.Optional;
 import java.util.stream.Stream;
 
+
+
 public class TextUtils {
 
+    /**
+     * This method searches for the longest word in
+     * a given string.
+     * It will split the String on all spaces and
+     * removes all punctuation characters (matching
+     * the pattern "[:;,.?!]"). If multiple words
+     * have the same length, it will return the
+     * first of these.
+     * @param text the text to analyze
+     * @return longest the longest word
+     * @throws IllegalArgumentException when
+     *    a null value, an empty string or a single space is passed
+     */
     public static String getLongestWord(String text){
 
         //throw new UnsupportedOperationException("Not implemented Yet initial and  more");
