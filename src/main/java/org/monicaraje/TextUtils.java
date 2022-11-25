@@ -23,10 +23,10 @@ public class TextUtils {
     public static String getLongestWord(String text){
 
         //throw new UnsupportedOperationException("Not implemented Yet initial and  more");
-
-        if(text == null){
-            return text;
+        if(isIllegalInput(text)){
+            throw  new IllegalArgumentException("Text is empty or null");
         }
+        text = stripPunctuationCharacters(text);
         String tempText[] = text.split(" ");
         int currLen, maxLen = tempText[0].length();
         currLen = maxLen;
@@ -50,5 +50,13 @@ public class TextUtils {
         System.out.println(longestWord);
         return  longestWord;
 
+    }
+
+    public static boolean isIllegalInput(String text){
+        return null==text || text.isEmpty() || text.equals(" ");
+    }
+
+    public static String stripPunctuationCharacters(String text){
+        return text.replaceAll("[?.:;,]]","");
     }
 }
