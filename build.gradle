@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group 'org.monicaraje'
+version '1.0-SNAPSHOT'
+sourceCompatibility = JavaVersion.VERSION_17
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    //for parameterized tests
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.5.2'
+    //for assertJ type assertions
+    testImplementation 'org.assertj:assertj-core:3.13.2'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'org.monicaraje.Main'
+        )
+    }
+}
